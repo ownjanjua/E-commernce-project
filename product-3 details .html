@@ -527,40 +527,6 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>   
-<script>
-    // Size button selection
-    let selectedSize = null;
-    document.querySelectorAll('.size-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-            document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('selected'));
-            this.classList.add('selected');
-            selectedSize = this.getAttribute('data-size');
-            document.getElementById('selectedSize').innerText = selectedSize;
-        });
-    });
 
-    // Quantity Selector Logic
-    document.getElementById('plus-btn').addEventListener('click', function () {
-        let qty = document.getElementById('quantity');
-        qty.value = parseInt(qty.value) + 1;
-    });
-
-    document.getElementById('minus-btn').addEventListener('click', function () {
-        let qty = document.getElementById('quantity');
-        if (parseInt(qty.value) > 1) {
-            qty.value = parseInt(qty.value) - 1;
-        }
-    });
-
-    // Buy Now Button
-    document.getElementById('buy-btn').addEventListener('click', function () {
-        if (!selectedSize) {
-            alert("Please select a bottle size first!");
-            return;
-        }
-        let quantity = document.getElementById('quantity').value;
-        alert(`You selected ${quantity}x ${selectedSize} bottle(s)`);
-    });
-</script>
 </body>
 </html>
